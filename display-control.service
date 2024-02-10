@@ -1,0 +1,13 @@
+# /etc/systemd/system/display-control.service
+
+[Unit]
+Description=Remote display control
+After=network.target
+
+[Service]
+WorkingDirectory=/path/to/repo
+ExecStart=/usr/bin/python3 /path/to/repo/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
