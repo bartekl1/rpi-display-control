@@ -8,13 +8,13 @@ app = Flask(__name__)
 
 @app.route("/api/on", methods=["POST"])
 def turn_on_screen():
-    os.system("xset dpms force on")
+    os.system("xset -d :0 dpms force on")
     return {"status": "ok"}
 
 
 @app.route("/api/off", methods=["POST"])
 def turn_off_screen():
-    os.system("sleep 1 && xset dpms force off")
+    os.system("sleep 1 && xset -d :0 dpms force off")
     return {"status": "ok"}
 
 
